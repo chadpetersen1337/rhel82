@@ -18,6 +18,7 @@ yum install bzip2 -y
 yum install net-tools -y
 yum install tmux -y
 yum install expect squid httpd-tools -y
+yum groupinstall "Development Tools" -y
 
 cp /etc/squid/squid.conf /etc/squid/squid.conf.bak
 
@@ -109,7 +110,7 @@ ExecStart=/usr/local/bin/dropbearkey -t dss -f /etc/dropbear/dropbear_dss_host_k
 ExecStart=/usr/local/bin/dropbearkey -t ecdsa -f /etc/dropbear/dropbear_ecdsa_host_key
 RemainAfterExit=yes
 ' > /usr/lib/systemd/system/dropbear-keygen.service
-systemctl start dropbear-keygen.service; systemctl enable dropbear.service; systemctl start dropbear.service
+systemctl start dropbear-keygen.service; systemctl enable dropbear.service; systemctl start dropbear.service;
 
 cd
 
@@ -178,7 +179,7 @@ sleep 60 && sh /etc/init.d/flush.sh
 
 chmod +x /etc/rc.local
 ls -l /etc/rc.local
-systemctl enable rc-local; systemctl start rc-local.service; systemctl status rc-local.service
+systemctl enable rc-local; systemctl start rc-local.service; systemctl status rc-local.service;
 
 iptables -L
 netstat -ntlp
