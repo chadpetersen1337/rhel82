@@ -170,10 +170,10 @@ WantedBy=multi-user.target
 ' > /etc/systemd/system/rc-local.service
 
 echo '#!/bin/sh
+stunnel
 service squid restart
 /usr/bin/vpnserver start
 badvpn-udpgw --listen-addr 127.0.0.1:7300 > /dev/null &
-stunnel
 sleep 60 && sh /etc/init.d/flush.sh
 ' > /etc/rc.local
 
