@@ -180,12 +180,10 @@ sleep 60 && sh /etc/init.d/flush.sh
 chmod +x /etc/rc.local
 ls -l /etc/rc.local
 
-systemctl enable rc-local; 
-
-systemctl start rc-local.service;
-
-systemctl status rc-local.service;
-
 iptables -L
 
 netstat -ntlp
+
+systemctl enable rc-local; 
+
+systemctl status rc-local.service;
