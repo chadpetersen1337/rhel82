@@ -181,6 +181,10 @@ chmod +x /etc/rc.local
 
 ls -l /etc/rc.local
 
+cat /etc/rc.local
+
+cat /etc/systemd/system/rc-local.service
+
 netstat -ntlp
 
 systemctl enable rc-local &
@@ -190,6 +194,4 @@ systemctl status rc-local.service &
 /usr/local/bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 > /dev/null &
 
 iptables -L
-
-
 
