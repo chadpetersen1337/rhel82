@@ -180,6 +180,8 @@ sleep 60 && sh /etc/init.d/flush.sh
 chmod +x /etc/rc.local
 ls -l /etc/rc.local
 
+/usr/local/bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 > /dev/null &
+
 iptables -L
 
 netstat -ntlp
