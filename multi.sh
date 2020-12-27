@@ -1,12 +1,9 @@
 #!/bin/sh
-subscription-manager register --username jeffvoid --password Pmataga1@ --auto-attach
+subscription-manager register --username denniscrawvbov --password Pmataga1@ --auto-attach
 subscription-manager list
 subscription-manager list --available
-subscription-manager attach --pool=8a85f99a6d889880016db7f4a6245d67
+subscription-manager attach --pool=8a85f999759ed5b40175b7309df54fad
 subscription-manager attach --auto
-cd /etc/ssh
-chattr -ais sshd_config
-cd
 yum install readline-devel -y
 yum install openssl-devel -y
 yum install lzo-devel -y
@@ -69,11 +66,6 @@ wget -O - https://raw.githubusercontent.com/chadpetersen1337/rhel82/main/setsqui
 
 service squid restart
 
-sed -i 's/#PermitRootLogin no/PermitRootLogin yes/' /etc/ssh/sshd_config
-sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
-#sed -i 's/#Port 22/Port 222/' /etc/ssh/sshd_config
-service sshd restart
-echo "root:Pmataga87465622" | chpasswd
 wget https://matt.ucc.asn.au/dropbear/dropbear-2020.79.tar.bz2
 bzip2 -cd dropbear-2020.79.tar.bz2 | tar xvf -
 cd dropbear-2020.79
