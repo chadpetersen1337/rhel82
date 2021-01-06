@@ -66,9 +66,9 @@ wget -O - https://raw.githubusercontent.com/chadpetersen1337/rhel82/main/setsqui
 
 service squid restart
 
-wget https://matt.ucc.asn.au/dropbear/dropbear-2020.79.tar.bz2
-bzip2 -cd dropbear-2020.79.tar.bz2 | tar xvf -
-cd dropbear-2020.79
+wget https://matt.ucc.asn.au/dropbear/dropbear-2020.80.tar.bz2
+bzip2 -cd dropbear-2020.80.tar.bz2 | tar xvf -
+cd dropbear-2020.80
 ./configure && make && make install
 ln /usr/local/sbin/dropbear /usr/sbin/dropbear
 mkdir /etc/dropbear
